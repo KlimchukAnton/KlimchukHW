@@ -1,3 +1,3 @@
-my_age= 28
-my_age= 31
-print(my_age)
+my_name=("Anton")
+
+print(my_name)
