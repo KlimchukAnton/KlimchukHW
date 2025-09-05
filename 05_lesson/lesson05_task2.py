@@ -12,7 +12,7 @@ driver.maximize_window()
 driver.get("http://uitestingplayground.com/classattr")
 
 for i in range(3):
-    blue_button = driver.find_element(By.CSS_SELECTOR, "button.btn class2")
+    blue_button = driver.find_element(By.CSS_SELECTOR, "button.btn")
     blue_button.click()
 
 sleep(5)
