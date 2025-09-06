@@ -9,7 +9,7 @@ driver = webdriver.Chrome(
     service=ChromeService(ChromeDriverManager().install()))
 driver.maximize_window()
 
-driver.get("http://uitestingplayground.com/classattr")
+driver.get("http://uitestingplayground.com/dynamicid")
 
 for i in range(3):
     blue_button = driver.find_element(By.CSS_SELECTOR, "button.btn")
