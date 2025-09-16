@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from time import sleep
 
 from ShopLogin import ShopLogin
 from ShopPage import ShopPage
@@ -21,7 +20,7 @@ def test_shop():
     shop_cart.get()
     shop_cart.checkout_nformation("Ivan", "Petrov", "858641")
     shop_cart.total()
+    total = shop_cart.total()
     
-    assert shop_cart.total == "Total: $58.29"
-
-    sleep(5)
+    browser.quit
+    assert total == "Total: $58.29"

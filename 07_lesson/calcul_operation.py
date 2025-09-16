@@ -10,8 +10,6 @@ class CalculOperation:
         self._browser.find_element(By.XPATH, "//span[text()='8']").click()
         self._browser.find_element(By.XPATH, "//span[text()='=']").click()
         
-        self._browser.quit()
-        
     def result (self):
         txt = self._browser.find_element(By.CSS_SELECTOR, ".screen").text
         number_str = txt.split()[0]

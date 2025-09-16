@@ -15,5 +15,5 @@ class ShopCartPage:
         self._browser.find_element(By.CSS_SELECTOR, "#continue").click()
 
     def total(self):
-        total = browser.find_element(By.CSS_SELECTOR, "div.summary_total_label").text
-        print(total)
+        total = self._browser.find_element(By.CSS_SELECTOR, "div.summary_total_label").text
+        return total

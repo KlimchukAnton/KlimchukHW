@@ -16,5 +16,6 @@ def test_calculator():
     calcul_operat = CalculOperation(browser)
     calcul_operat.operation()
     
-    assert calcul_operat.result == "15"
+    assert calcul_operat.result() == "15"
     
+    browser.quit
