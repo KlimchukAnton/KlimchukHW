@@ -22,7 +22,7 @@ class ShopCartPage:
     def checkout_nformation(self, first_name, last_name, index):
         with allure.step("Ввети имя"):
             self._browser.find_element(By.CSS_SELECTOR, "#first-name").send_keys(first_name)
-            with allure.step("Ввести фамилию"):
+        with allure.step("Ввести фамилию"):
             self._browser.find_element(By.CSS_SELECTOR, "#last-name").send_keys(last_name)
         with allure.step("Ввети индекс"):
             self._browser.find_element(By.CSS_SELECTOR, "#postal-code").send_keys(index)

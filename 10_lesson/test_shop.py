@@ -12,8 +12,6 @@ from page.ShopCartPage import ShopCartPage
 @allure.epic("Магазин")
 @allure.severity("blocker")
 
-@allure.epic("Магазин")
-
 def test_shop():
     with allure.step("Запуск браузера"):
         browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -32,7 +30,9 @@ def test_shop():
         shop_cart.checkout_nformation("Ivan", "Petrov", "858641")
         shop_cart.total()
         total = shop_cart.total()
+   
     with allure.step("Закрыть браузер командой quit"):
         browser.quit
+    
     with allure.step("Выплнить проверку итоговой стоимости товаров с фактической, должны совпадать"):
         assert total == "Total: $58.29"
