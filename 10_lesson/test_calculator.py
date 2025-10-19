@@ -25,4 +25,4 @@ def test_calculator():
     with allure.step("Проверка правильности работы калькулятора сравнением полученного из консоли результата с истинным значением"):
         assert calcul_operat.result() == "15"
     with allure.step("Закрытие браузера командой Quit"):
-        browser.quit
+        browser.quit()

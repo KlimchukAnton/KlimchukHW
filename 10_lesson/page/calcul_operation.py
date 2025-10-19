@@ -1,5 +1,7 @@
 import allure
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as Ec
 
 @allure.epic("Калькулятор, консоль для операций")
 @allure.severity("blocker")
@@ -23,6 +25,11 @@ class CalculOperation:
     
     @allure.step("Возвращение результата")
     def result (self):
+        with allure.step("Ожидание появления результата"):
+            WebDriverWait(self._browser, 50).until(
+                lambda driver: driver.find_element(By.CSS_SELECTOR, ".screen").txt 
+                and driver.find_element(By.CSS_SELECTOR, ".screen").text != "7+8"
+            )
         with allure.step("Преобразование результата в текст"):
             txt = self._browser.find_element(By.CSS_SELECTOR, ".screen").text
         with allure.step("Присвоение переменной для результата"):

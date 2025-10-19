@@ -1,3 +1,7 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
 import allure
 from selenium.webdriver.common.by import By
 
@@ -19,7 +23,10 @@ class ShopCartPage:
             self._browser.find_element(By.CSS_SELECTOR, "#checkout").click()
 
     @allure.step("Ввод данных")
-    def checkout_nformation(self, first_name, last_name, index):
+    def checkout_information(self, first_name, last_name, index):
+        with allure.step("Ожидсние загрузки формы"):
+            WebDriverWait(self._browser, 10).until(
+                EC.presence_of_all_elements_located(By.CSS_SELECTOR, "#first-name"))
         with allure.step("Ввети имя"):
             self._browser.find_element(By.CSS_SELECTOR, "#first-name").send_keys(first_name)
         with allure.step("Ввести фамилию"):

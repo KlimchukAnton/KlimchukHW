@@ -1,5 +1,4 @@
 import allure
-import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -16,7 +15,7 @@ def test_shop():
     with allure.step("Запуск браузера"):
         browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     
-    with allure.step("Войти по имеющимся данным")
+    with allure.step("Войти по имеющимся данным"):
         shop_login = ShopLogin(browser)
         shop_login.login("standard_user", "secret_sauce")
     
@@ -32,7 +31,7 @@ def test_shop():
         total = shop_cart.total()
    
     with allure.step("Закрыть браузер командой quit"):
-        browser.quit
+        browser.quit()
     
     with allure.step("Выплнить проверку итоговой стоимости товаров с фактической, должны совпадать"):
         assert total == "Total: $58.29"
