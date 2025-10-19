@@ -26,7 +26,7 @@ def test_shop():
     with allure.step("Ввести данные получения"):
         shop_cart = ShopCartPage(browser)
         shop_cart.get()
-        shop_cart.checkout_nformation("Ivan", "Petrov", "858641")
+        shop_cart.checkout_information("Ivan", "Petrov", "858641")
         shop_cart.total()
         total = shop_cart.total()
    

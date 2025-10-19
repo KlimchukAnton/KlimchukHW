@@ -27,7 +27,7 @@ class CalculOperation:
     def result (self):
         with allure.step("Ожидание появления результата"):
             WebDriverWait(self._browser, 50).until(
-                lambda driver: driver.find_element(By.CSS_SELECTOR, ".screen").txt 
+                lambda driver: driver.find_element(By.CSS_SELECTOR, ".screen").text 
                 and driver.find_element(By.CSS_SELECTOR, ".screen").text != "7+8"
             )
         with allure.step("Преобразование результата в текст"):
