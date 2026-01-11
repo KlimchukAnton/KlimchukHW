@@ -1,0 +1,12 @@
+from address import Address
+
+class Mailing:
+    def __init__(self, to_address, from_address, coast, track):
+        self.to_address = to_address
+        self.from_address = from_address
+        self.coast = coast
+        self.track = track
+
+    def __str__(self):
+        return (f"Отправление: {self.track} Из: {self.from_address}"
+                f" В: {self.to_address}. Стоимость: {self.coast} рублей.")
